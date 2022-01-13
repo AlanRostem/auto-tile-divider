@@ -12,7 +12,7 @@ func __set_tile_set(tile_set):
 	#__update_tiles(tile_set)
 	
 func _ready():
-	__open_dialog.popup_centered()
+	__open_dialog.popup()
 
 func __save(path):
 	var img = __view_port.get_texture().get_data()
@@ -29,7 +29,7 @@ func __update_tiles(image):
 
 func _on_OpenDialog_file_selected(path):
 	__load(path)
-	__save_dialog.call_deferred("popup_centered")
+	__save_dialog.call_deferred("popup")
 
 func _on_SaveDialog_file_selected(path):
 	__save(path)
