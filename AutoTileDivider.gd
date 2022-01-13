@@ -1,16 +1,13 @@
+tool
 extends Control
 
+const COLS = 5
+#const ROWS = 3
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export(Texture) var __tile_set: Texture setget __set_tile_set
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func __set_tile_set(tex):
+	__tile_set = tex
+	var tile_set = $TileMap.tile_set
+	for id in tile_set.get_tiles_ids():
+		tile_set.tile_set_texture(id, __tile_set)
