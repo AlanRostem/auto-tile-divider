@@ -1,4 +1,3 @@
-tool
 extends Control
 
 export(Texture) var __tile_set: Texture setget __set_tile_set
